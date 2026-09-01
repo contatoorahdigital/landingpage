@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&amp;family=Archivo:wght@400;500;600&amp;family=Martian+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #0A0B08; color: #F4F5EF; font-family: Archivo, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #FF7A1A; text-decoration: none; }
+  a:hover { color: #FFA05C; }
+  p { margin: 0; text-wrap: pretty; }
+  summary::-webkit-details-marker { display: none; }
+  .reels-rail { display: flex; gap: clamp(10px, 1.6vw, 20px); overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; padding-bottom: 4px; }
+  .reels-rail::-webkit-scrollbar { display: none; }
+  .reels-rail > * { flex: 0 0 calc((100% - 2 * clamp(10px, 1.6vw, 20px)) / 3); scroll-snap-align: start; }
+  @media (max-width: 900px) { .reels-rail > * { flex: 0 0 calc((100% - clamp(10px, 1.6vw, 20px)) / 2); } }
+  @media (max-width: 620px) { .reels-rail > * { flex: 0 0 78%; } }
+  .rail-btn:disabled { opacity: .3; cursor: default; }
+  @media (max-width: 900px) {
+    .orah-nav { display: none !important; }
+    .mobile-cta { display: block !important; }
+    .reels-head-link { display: none !important; }
+  }
+  .mobile-cta { display: none; }
+  @media (max-width: 900px) {
+    .como-aside { position: static !important; }
+    body { padding-bottom: 84px; }
+  }
+  @media (max-width: 620px) {
+    .hero-media { min-height: 340px !important; }
+    .reels-rail > * { aspect-ratio: auto; }
+  }
+  @keyframes orahRise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes orahGlow { 0%,100% { opacity: .5; } 50% { opacity: .85; } }
+</style>
+</helmet>
+
+<div style="background:#0A0B08;min-height:100vh;overflow-x:hidden">
+
+  <header style="position:sticky;top:0;z-index:50;background:rgba(10,11,8,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07)">
+    <div style="max-width:1240px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;gap:28px">
+      <a href="#topo" style="display:flex;align-items:baseline;gap:8px;color:#F4F5EF;flex:0 0 auto">
+        <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:23px;letter-spacing:-.02em;line-height:1">ORAH</span>
+        <span style="width:6px;height:6px;border-radius:50%;background:#FF7A1A;display:block;margin-bottom:4px"></span>
+        <span style="font-family:'Martian Mono',monospace;font-size:9.5px;letter-spacing:.22em;color:#9A9E90;text-transform:uppercase">Digital</span>
+      </a>
+      <nav class="orah-nav" style="display:flex;flex-wrap:wrap;gap:22px;margin-left:auto;font-size:13.5px;color:#9A9E90">
+        <a href="#problema" style="color:#9A9E90" style-hover="color:#F4F5EF">O problema</a>
+        <a href="#direcao" style="color:#9A9E90" style-hover="color:#F4F5EF">O método</a>
+        <a href="#reels" style="color:#9A9E90" style-hover="color:#F4F5EF">Reels no ar</a>
+        <a href="#como" style="color:#9A9E90" style-hover="color:#F4F5EF">Como funciona</a>
+        <a href="#faq" style="color:#9A9E90" style-hover="color:#F4F5EF">Dúvidas</a>
+      </nav>
+      <a href="https://wa.link/46dk6q" target="_blank" rel="noopener" style="flex:0 0 auto;margin-left:auto;background:#FF7A1A;color:#10130B;font-weight:600;font-size:13.5px;padding:11px 18px;border-radius:9px;transition:transform .18s ease,background .18s ease" style-hover="background:#FF9445;transform:translateY(-1px);color:#10130B">Falar no WhatsApp</a>
+    </div>
+  </header>
+
+  <section id="topo" style="position:relative;max-width:1240px;margin:0 auto;padding:clamp(28px,5vw,64px) 24px clamp(40px,5vw,72px)">
+    <div style="position:absolute;top:-120px;left:-160px;width:620px;height:620px;background:radial-gradient(circle,rgba(255,122,26,.16),transparent 62%);pointer-events:none;animation:orahGlow 9s ease-in-out infinite"></div>
+    <div style="position:relative;display:flex;flex-wrap:wrap;gap:clamp(20px,3vw,34px);align-items:stretch">
+      <div style="flex:1 1 460px;min-width:0;background:#12140F;border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:clamp(26px,4vw,52px);display:flex;flex-direction:column;justify-content:space-between;gap:34px;animation:orahRise .6s ease both">
+        <div style="display:flex;flex-direction:column;gap:clamp(18px,2.4vw,26px)">
+          <span style="display:inline-flex;align-items:center;gap:9px;font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#9A9E90">
+            <span style="width:6px;height:6px;border-radius:50%;background:#FF7A1A"></span>Produção de Reels para negócio local · Tubarão/SC
+          </span>
+          <h1 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2.15rem,4.6vw,3.9rem);line-height:.98;letter-spacing:-.028em;text-wrap:balance">
+            Você grava, posta, <span style="color:#FF7A1A">e nada acontece.</span>
+          </h1>
+          <p style="font-size:clamp(15.5px,1.25vw,18px);line-height:1.6;color:#B9BDAF;max-width:56ch">
+            Ele sai sem gancho nos primeiros segundos, sem enquadramento pensado, sem ritmo, e fica igual ao de qualquer concorrente. Em duas horas some no feed. A ORAH entra com a direção: define o enquadramento, o gancho e o corte, grava e te entrega o Reel editado, pronto pra postar.
+          </p>
+          <p style="font-size:14px;line-height:1.6;color:#9A9E90;max-width:52ch">
+            Você não precisa saber de câmera, enquadramento ou edição. E, se preferir, nem aparece no vídeo.
+          </p>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px">
+          
+          <a href="{{ formLink }}" target="_blank" rel="noopener" style="border: 1px solid rgba(255,122,26,.45); color: #FF7A1A; font-weight: 600; font-size: 30px; padding: 17px 26px; border-radius: 11px; transition: background .18s ease,transform .18s ease; width: 417px; height: 76px; text-align: center" style-hover="background:rgba(255,122,26,.12);transform:translateY(-2px);color:#FF7A1A">Preencha o formulário</a>
+          <a href="#reels" style="color:#B9BDAF;font-size:15px;padding:18px 4px;border-bottom:1px solid rgba(255,255,255,.18);transition:color .18s ease,border-color .18s ease" style-hover="color:#F4F5EF;border-color:#FF7A1A">Ver os Reels que já fizemos</a>
+        </div>
+      </div>
+      <div class="hero-media" style="flex:1 1 260px;max-width:400px;min-width:0;position:relative;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.07);background:#12140F;min-height:420px;animation:orahRise .6s .08s ease both">
+        <image-slot id="orah-hero" shape="rect" placeholder="Frame vertical (9:16) de um Reel da ORAH: dono do negócio no ambiente dele, luz baixa, foco curto"></image-slot>
+        <div style="position:absolute;left:14px;top:14px;pointer-events:none;font-family:'Martian Mono',monospace;font-size:9.5px;letter-spacing:.16em;color:#FF7A1A;background:rgba(10,11,8,.62);padding:6px 9px;border-radius:6px">REC · 9:16</div>
+      </div>
+    </div>
+
+    <div style="position:relative;margin-top:clamp(20px,3vw,34px);display:flex;flex-wrap:wrap;gap:clamp(14px,2vw,22px)">
+      
+      
+    </div>
+  </section>
+
+  <section style="border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);background:#0C0D09">
+    
+  </section>
+
+  <section id="problema" style="max-width:1240px;margin:0 auto;padding:clamp(64px,8vw,120px) 24px">
+    <span style="display:inline-flex;align-items:center;gap:9px;font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#9A9E90">
+      <span style="width:6px;height:6px;border-radius:50%;background:#FF7A1A"></span>O problema
+    </span>
+    <h2 style="margin:20px 0 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.9rem,3.6vw,3rem);line-height:1.02;letter-spacing:-.026em;max-width:22ch">
+      O problema não é falta de conteúdo. É conteúdo sem direção.
+    </h2>
+    <p style="margin-top:22px;font-size:clamp(15.5px,1.2vw,17.5px);line-height:1.68;color:#B9BDAF;max-width:66ch">
+      Vídeo gravado sem enquadramento pensado e sem gancho nos dois primeiros segundos fica parecido com o de qualquer concorrente seu, mesmo quando o seu produto é melhor. Ele não para ninguém, não vende e some. Isso custa caro, mesmo que você nunca veja a conta.
+    </p>
+    <div style="margin-top:clamp(34px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:18px;overflow:hidden">
+      <div style="background:#12140F;padding:clamp(24px,2.4vw,32px);display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:'Martian Mono',monospace;font-size:11px;color:#FF7A1A;letter-spacing:.1em">01</span>
+        <p style="font-size:15.5px;line-height:1.62;color:#DDE2CE">O cliente rola o feed rápido e só para no que parece feito por quem entende do assunto. Vídeo sem gancho nos primeiros segundos ele nem registra.</p>
+      </div>
+      <div style="background:#12140F;padding:clamp(24px,2.4vw,32px);display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:'Martian Mono',monospace;font-size:11px;color:#FF7A1A;letter-spacing:.1em">02</span>
+        <p style="font-size:15.5px;line-height:1.62;color:#DDE2CE">O concorrente que posta toda semana, mesmo com vídeo mediano, fica na cabeça do seu cliente. Quem some por um mês, não.</p>
+      </div>
+      <div style="background:#12140F;padding:clamp(24px,2.4vw,32px);display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:'Martian Mono',monospace;font-size:11px;color:#FF7A1A;letter-spacing:.1em">03</span>
+        <p style="font-size:15.5px;line-height:1.62;color:#DDE2CE">O tempo que você gasta tentando resolver isso sozinho sai do balcão, da cadeira do consultório, do atendimento. E ainda sobra um vídeo que parece amador.</p>
+      </div>
+    </div>
+    <p style="margin-top:clamp(28px,3vw,40px);font-size:clamp(16px,1.3vw,19px);line-height:1.6;color:#F4F5EF;max-width:70ch;padding-left:20px;border-left:2px solid #FF7A1A">
+      Foi por isso que a ORAH tirou a parte que exige tempo e técnica (câmera, enquadramento, direção e edição) de dentro do seu dia. Você continua sendo o dono e quem entende do assunto. A câmera é com a gente.
+    </p>
+  </section>
+
+  <section id="direcao" style="background:#0C0D09;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07)">
+    <div style="max-width:1240px;margin:0 auto;padding:clamp(64px,8vw,120px) 24px;display:flex;flex-wrap:wrap;gap:clamp(30px,5vw,72px)">
+      <div style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:22px">
+        <span style="display:inline-flex;align-items:center;gap:9px;font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#9A9E90">
+          <span style="width:6px;height:6px;border-radius:50%;background:#FF7A1A"></span>O método
+        </span>
+        <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.9rem,3.4vw,2.9rem);line-height:1.03;letter-spacing:-.026em">
+          Direção é o que separa um Reel de um vídeo qualquer.
+        </h2>
+        <p style="font-size:clamp(15.5px,1.2vw,17.5px);line-height:1.68;color:#B9BDAF;max-width:56ch">
+          Qualquer celular grava um vídeo hoje. O que quase ninguém tem é alguém decidindo o que filmar, como enquadrar, o que dizer nos primeiros segundos, e mantendo isso toda semana.
+        </p>
+        <p style="font-size:clamp(15.5px,1.2vw,17.5px);line-height:1.68;color:#B9BDAF;max-width:56ch">
+          A ideia e a base vêm de você, que é quem entende do seu negócio. A partir daí, dois caminhos: você já tem um roteiro ou uma ideia e a gente lapida pra funcionar melhor na câmera, ou a ORAH pesquisa e escreve o roteiro do zero.
+        </p>
+        <a href="#reels" style="align-self:flex-start;border:1px solid rgba(255,122,26,.45);color:#FF7A1A;font-weight:600;font-size:15px;padding:15px 24px;border-radius:11px;transition:background .18s ease,transform .18s ease" style-hover="background:rgba(255,122,26,.12);transform:translateY(-2px);color:#FF7A1A">Ver os Reels no ar →</a>
+      </div>
+      <div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:18px;overflow:hidden;align-self:flex-start">
+        <div style="background:#12140F;padding:26px clamp(22px,2vw,30px);display:flex;gap:18px;align-items:flex-start">
+          <span style="font-family:'Martian Mono',monospace;font-size:11px;color:#FF7A1A;padding-top:3px">01</span>
+          <div style="display:flex;flex-direction:column;gap:7px">
+            <h3 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.015em">Enquadramento</h3>
+            <p style="font-size:14.5px;line-height:1.6;color:#9A9E90">Alguém decide de onde a câmera olha o seu produto, o seu ambiente, você.</p>
+          </div>
+        </div>
+        <div style="background:#12140F;padding:26px clamp(22px,2vw,30px);display:flex;gap:18px;align-items:flex-start">
+          <span style="font-family:'Martian Mono',monospace;font-size:11px;color:#FF7A1A;padding-top:3px">02</span>
+          <div style="display:flex;flex-direction:column;gap:7px">
+            <h3 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.015em">Gancho</h3>
+            <p style="font-size:14.5px;line-height:1.6;color:#9A9E90">Os dois primeiros segundos que decidem se o cliente para ou continua rolando.</p>
+          </div>
+        </div>
+        <div style="background:#12140F;padding:26px clamp(22px,2vw,30px);display:flex;gap:18px;align-items:flex-start">
+          <span style="font-family:'Martian Mono',monospace;font-size:11px;color:#FF7A1A;padding-top:3px">03</span>
+          <div style="display:flex;flex-direction:column;gap:7px">
+            <h3 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.015em">Corte</h3>
+            <p style="font-size:14.5px;line-height:1.6;color:#9A9E90">O ritmo que não deixa o vídeo morrer no meio e perder quem já estava assistindo.</p>
+          </div>
+        </div>
+        <div style="background:#12140F;padding:26px clamp(22px,2vw,30px);display:flex;gap:18px;align-items:flex-start">
+          <span style="font-family:'Martian Mono',monospace;font-size:11px;color:#FF7A1A;padding-top:3px">04</span>
+          <div style="display:flex;flex-direction:column;gap:7px">
+            <h3 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.015em">Roteiro</h3>
+            <p style="font-size:14.5px;line-height:1.6;color:#9A9E90">Seu, lapidado pra câmera, ou escrito pela ORAH do zero. Os dois começam do que você conhece do negócio.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reels" style="max-width:1240px;margin:0 auto;padding:clamp(64px,8vw,120px) 24px">
+    <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end;justify-content:space-between">
+      <div style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:18px">
+        <span style="display:inline-flex;align-items:center;gap:9px;font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#9A9E90">
+          <span style="width:6px;height:6px;border-radius:50%;background:#FF7A1A"></span>Prova por demonstração
+        </span>
+        <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.9rem,3.4vw,2.9rem);line-height:1.03;letter-spacing:-.026em;max-width:24ch">
+          A gente não pede pra você confiar num print de portfólio.
+        </h2>
+        <p style="font-size:clamp(15.5px,1.2vw,17.5px);line-height:1.68;color:#B9BDAF;max-width:58ch">
+          Os Reels que a gente fez estão aqui embaixo. Assiste, e depois a gente conversa.
+        </p>
+      </div>
+      <a href="{{ igLink }}" class="reels-head-link" target="_blank" rel="noopener" style="flex:0 0 auto;color:#B9BDAF;font-size:15px;padding:14px 4px;border-bottom:1px solid rgba(255,255,255,.18);transition:color .18s ease,border-color .18s ease" style-hover="color:#F4F5EF;border-color:#FF7A1A">Ver mais no Instagram @orahdigital →</a>
+    </div>
+    <div class="reels-rail" ref="{{ railRef }}" style="margin-top:clamp(30px,4vw,48px)">
+      <div style="position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.07);background:#12140F">
+        <!-- Trocar o rótulo pelo nome do cliente quando ele autorizar o uso -->
+        <image-slot id="orah-reel-1" shape="rect" placeholder="Reel de adega: garrafa em contraluz, ambiente da loja"></image-slot>
+        <a href="https://www.instagram.com/reel/Dcrcvczx1Z3/" target="_blank" rel="noopener" title="Assistir o Reel" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50%;background:#FF7A1A;color:#10130B;display:flex;align-items:center;justify-content:center;font-size:18px;padding-left:4px;box-shadow:0 6px 20px rgba(10,11,8,.45)">▶</a>
+        <div style="position:absolute;left:12px;bottom:12px;pointer-events:none;font-family:'Martian Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0F1109;background:#FF7A1A;padding:5px 8px;border-radius:5px">TUANNA · DENTISTA</div>
+      </div>
+      <div style="position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.07);background:#12140F">
+        <image-slot id="orah-reel-2" shape="rect" placeholder="Reel de clube recreativo: bastidor, movimento, pessoas"></image-slot>
+        <a href="https://www.instagram.com/reel/DZkql2uJayk/" target="_blank" rel="noopener" title="Assistir o Reel" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50%;background:#FF7A1A;color:#10130B;display:flex;align-items:center;justify-content:center;font-size:18px;padding-left:4px;box-shadow:0 6px 20px rgba(10,11,8,.45)">▶</a>
+        <div style="position:absolute;left:12px;bottom:12px;pointer-events:none;font-family:'Martian Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0F1109;background:#FF7A1A;padding:5px 8px;border-radius:5px">CLUBE DO PASSEIO</div>
+      </div>
+      <div style="position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.07);background:#12140F">
+        <image-slot id="orah-reel-3" shape="rect" placeholder="Reel de produto sem o dono aparecer: detalhe, mãos, textura"></image-slot>
+        <a href="https://www.instagram.com/reel/DW1yUYDiT0M/" target="_blank" rel="noopener" title="Assistir o Reel" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50%;background:#FF7A1A;color:#10130B;display:flex;align-items:center;justify-content:center;font-size:18px;padding-left:4px;box-shadow:0 6px 20px rgba(10,11,8,.45)">▶</a>
+        <div style="position:absolute;left:12px;bottom:12px;pointer-events:none;font-family:'Martian Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0F1109;background:#FF7A1A;padding:5px 8px;border-radius:5px">ADEGA DÁRIO</div>
+      </div>
+      <!-- Trocar href do play e o rótulo quando os 3 próximos Reels estiverem prontos -->
+      <div style="position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.07);background:#12140F">
+        <image-slot id="orah-reel-4" shape="rect" placeholder="Reel 4: capa vertical do próximo case"></image-slot>
+        <a href="https://www.instagram.com/reel/DcMkKdsBfOo/" target="_blank" rel="noopener" title="Assistir o Reel" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50%;background:#FF7A1A;color:#10130B;display:flex;align-items:center;justify-content:center;font-size:18px;padding-left:4px;box-shadow:0 6px 20px rgba(10,11,8,.45)">▶</a>
+        <div style="position:absolute;left:12px;bottom:12px;pointer-events:none;font-family:'Martian Mono',monospace;font-size:9px;letter-spacing:.14em;color:#0F1109;background:#FF7A1A;padding:5px 8px;border-radius:5px">VIDAS SEGURAS</div>
+      </div>
+      <div style="position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.07);background:#12140F">
+        <image-slot id="orah-reel-5" shape="rect" placeholder="Reel 5: capa vertical do próximo case"></image-slot>
+        <a href="{{ igLink }}" target="_blank" rel="noopener" title="Ver no Instagram" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50%;background:#FF7A1A;color:#10130B;display:flex;align-items:center;justify-content:center;font-size:18px;padding-left:4px;box-shadow:0 6px 20px rgba(10,11,8,.45)">▶</a>
+        <div style="position:absolute;left:12px;bottom:12px;pointer-events:none;font-family:'Martian Mono',monospace;font-size:9px;letter-spacing:.14em;color:#F4F5EF;background:rgba(10,11,8,.7);border:1px solid rgba(255,255,255,.16);padding:5px 8px;border-radius:5px">EM BREVE</div>
+      </div>
+      <div style="position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.07);background:#12140F">
+        <image-slot id="orah-reel-6" shape="rect" placeholder="Reel 6: capa vertical do próximo case"></image-slot>
+        <a href="{{ igLink }}" target="_blank" rel="noopener" title="Ver no Instagram" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50%;background:#FF7A1A;color:#10130B;display:flex;align-items:center;justify-content:center;font-size:18px;padding-left:4px;box-shadow:0 6px 20px rgba(10,11,8,.45)">▶</a>
+        <div style="position:absolute;left:12px;bottom:12px;pointer-events:none;font-family:'Martian Mono',monospace;font-size:9px;letter-spacing:.14em;color:#F4F5EF;background:rgba(10,11,8,.7);border:1px solid rgba(255,255,255,.16);padding:5px 8px;border-radius:5px">EM BREVE</div>
+      </div>
+    </div>
+    <div style="margin-top:20px;display:flex;align-items:center;gap:14px">
+      <button class="rail-btn" type="button" onClick="{{ railPrev }}" aria-label="Reels anteriores" style="width:46px;height:46px;flex:0 0 auto;border-radius:50%;border:1px solid rgba(255,255,255,.16);background:transparent;color:#F4F5EF;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .18s ease,background .18s ease" style-hover="border-color:#FF7A1A;background:rgba(255,122,26,.1)">←</button>
+      <button class="rail-btn" type="button" onClick="{{ railNext }}" aria-label="Próximos Reels" style="width:46px;height:46px;flex:0 0 auto;border-radius:50%;border:1px solid rgba(255,255,255,.16);background:transparent;color:#F4F5EF;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .18s ease,background .18s ease" style-hover="border-color:#FF7A1A;background:rgba(255,122,26,.1)">→</button>
+      <span style="font-family:'Martian Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#5F6357">Arraste para o lado</span>
+      <a href="{{ igLink }}" target="_blank" rel="noopener" style="margin-left:auto;color:#B9BDAF;font-size:14px;border-bottom:1px solid rgba(255,255,255,.18);transition:color .18s ease,border-color .18s ease" style-hover="color:#F4F5EF;border-color:#FF7A1A">Instagram @orahdigital →</a>
+    </div>
+    <sc-if value="{{ showTestimonial }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:clamp(30px,4vw,48px);background:#12140F;border:1px solid rgba(255,122,26,.28);border-radius:18px;padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;gap:16px">
+        <span style="font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#FF7A1A">Depoimento</span>
+        <p style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(1.2rem,2vw,1.7rem);line-height:1.28;letter-spacing:-.02em;color:#F4F5EF">Frase real do dono aqui: o que mudou depois que a ORAH assumiu a gravação.</p>
+        <p style="font-size:14.5px;color:#9A9E90">Nome do dono · Negócio, Tubarão</p>
+      </div>
+    </sc-if>
+  </section>
+
+  <section style="background:#0C0D09;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07)">
+    <div style="max-width:1240px;margin:0 auto;padding:clamp(64px,8vw,120px) 24px">
+      <span style="display:inline-flex;align-items:center;gap:9px;font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#9A9E90">
+        <span style="width:6px;height:6px;border-radius:50%;background:#FF7A1A"></span>O que isso significa pra você
+      </span>
+      <div style="margin-top:clamp(32px,4vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(16px,2vw,24px)">
+        <article style="background:#12140F;border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:clamp(26px,2.6vw,34px);display:flex;flex-direction:column;gap:20px;transition:border-color .2s ease,transform .2s ease" style-hover="border-color:rgba(255,122,26,.42);transform:translateY(-3px)">
+          <h3 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(1.15rem,1.6vw,1.45rem);line-height:1.18;letter-spacing:-.02em">Você não precisa aparecer se não quiser.</h3>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <span style="font-family:'Martian Mono',monospace;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#9A9E90">Como funciona</span>
+            <p style="font-size:14.8px;line-height:1.62;color:#B9BDAF">Boa parte dos vídeos foca no produto, no ambiente, no processo, no bastidor do negócio, sem depender de ninguém na frente da câmera.</p>
+          </div>
+          <p style="font-size:14.8px;line-height:1.62;color:#DDE2CE;padding-top:18px;border-top:1px solid rgba(255,255,255,.08)">Se vergonha de câmera é o que te trava até hoje, isso deixa de ser motivo pra não ter presença profissional no Instagram.</p>
+        </article>
+        <article style="background:#12140F;border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:clamp(26px,2.6vw,34px);display:flex;flex-direction:column;gap:20px;transition:border-color .2s ease,transform .2s ease" style-hover="border-color:rgba(255,122,26,.42);transform:translateY(-3px)">
+          <h3 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(1.15rem,1.6vw,1.45rem);line-height:1.18;letter-spacing:-.02em">Cada vídeo é dirigido pro seu negócio.</h3>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <span style="font-family:'Martian Mono',monospace;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#9A9E90">Como funciona</span>
+            <p style="font-size:14.8px;line-height:1.62;color:#B9BDAF">Antes de gravar, a gente entende o que faz o seu negócio diferente do concorrente do lado. A direção e o roteiro partem disso.</p>
+          </div>
+          <p style="font-size:14.8px;line-height:1.62;color:#DDE2CE;padding-top:18px;border-top:1px solid rgba(255,255,255,.08)">O resultado tem a cara do seu negócio. Não sai igual ao vídeo padrão que a agência do concorrente entrega pra todo mundo.</p>
+        </article>
+        <article style="background:#12140F;border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:clamp(26px,2.6vw,34px);display:flex;flex-direction:column;gap:20px;transition:border-color .2s ease,transform .2s ease" style-hover="border-color:rgba(255,122,26,.42);transform:translateY(-3px)">
+          <h3 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(1.15rem,1.6vw,1.45rem);line-height:1.18;letter-spacing:-.02em">A gravação cabe na sua rotina, não o contrário.</h3>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <span style="font-family:'Martian Mono',monospace;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#9A9E90">Como funciona</span>
+            <p style="font-size:14.8px;line-height:1.62;color:#B9BDAF">A captação é feita num bloco só de tempo, sem virar o funcionamento do seu dia de cabeça pra baixo nem tomar o dia inteiro de atendimento.</p>
+          </div>
+          <p style="font-size:14.8px;line-height:1.62;color:#DDE2CE;padding-top:18px;border-top:1px solid rgba(255,255,255,.08)">Você fecha um mês de conteúdo sem fechar as portas pra gravar.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="como" style="max-width:1240px;margin:0 auto;padding:clamp(64px,8vw,120px) 24px;display:flex;flex-wrap:wrap;gap:clamp(30px,5vw,72px)">
+    <div class="como-aside" style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:20px;align-self:flex-start;position:sticky;top:104px">
+      <span style="display:inline-flex;align-items:center;gap:9px;font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#9A9E90">
+        <span style="width:6px;height:6px;border-radius:50%;background:#FF7A1A"></span>Como funciona
+      </span>
+      <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.04;letter-spacing:-.026em;max-width:20ch">
+        O que acontece quando você chama no WhatsApp
+      </h2>
+      <p style="font-size:15.5px;line-height:1.65;color:#9A9E90;max-width:40ch">Sem contrato empurrado, sem letra miúda. Se não fizer sentido, você não gastou nada além de alguns minutos de conversa.</p>
+      <a href="https://wa.link/46dk6q" target="_blank" rel="noopener" style="align-self:flex-start;background:#FF7A1A;color:#10130B;font-weight:600;font-size:15.5px;padding:16px 26px;border-radius:11px;transition:transform .18s ease,background .18s ease" style-hover="background:#FF9445;transform:translateY(-2px);color:#10130B">Falar no WhatsApp agora →</a>
+    </div>
+    <ol style="flex:1 1 420px;min-width:0;list-style:none;margin:0;padding:0;display:flex;flex-direction:column">
+      <li style="display:flex;gap:clamp(18px,2.2vw,32px);padding:clamp(24px,2.6vw,34px) 0;border-top:1px solid rgba(255,255,255,.08)">
+        <span style="font-family:'Martian Mono',monospace;font-size:12px;color:#FF7A1A;padding-top:5px;flex:0 0 auto">01</span>
+        <p style="font-size:clamp(16px,1.3vw,18.5px);line-height:1.6;color:#DDE2CE">Você conta rápido sobre o seu negócio e o que já tentou de conteúdo até agora.</p>
+      </li>
+      <li style="display:flex;gap:clamp(18px,2.2vw,32px);padding:clamp(24px,2.6vw,34px) 0;border-top:1px solid rgba(255,255,255,.08)">
+        <span style="font-family:'Martian Mono',monospace;font-size:12px;color:#FF7A1A;padding-top:5px;flex:0 0 auto">02</span>
+        <p style="font-size:clamp(16px,1.3vw,18.5px);line-height:1.6;color:#DDE2CE">A gente te mostra os Reels que já fez pra negócios do seu tipo, ou parecido.</p>
+      </li>
+      <li style="display:flex;gap:clamp(18px,2.2vw,32px);padding:clamp(24px,2.6vw,34px) 0;border-top:1px solid rgba(255,255,255,.08)">
+        <span style="font-family:'Martian Mono',monospace;font-size:12px;color:#FF7A1A;padding-top:5px;flex:0 0 auto">03</span>
+        <p style="font-size:clamp(16px,1.3vw,18.5px);line-height:1.6;color:#DDE2CE">Se fizer sentido pros dois lados, você recebe uma proposta com o plano certo pro seu caso: a gente lapidando o seu roteiro ou escrevendo do zero. Sem modelo genérico e sem compromisso de fechar ali.</p>
+      </li>
+      <li style="display:flex;gap:clamp(18px,2.2vw,32px);padding:clamp(24px,2.6vw,34px) 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)">
+        <span style="font-family:'Martian Mono',monospace;font-size:12px;color:#FF7A1A;padding-top:5px;flex:0 0 auto">04</span>
+        <p style="font-size:clamp(16px,1.3vw,18.5px);line-height:1.6;color:#DDE2CE">Fechando, a gente marca a captação num bloco de tempo só e você recebe os Reels prontos pra postar.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section style="padding:0 24px clamp(20px,3vw,40px)">
+    <div style="max-width:1240px;margin:0 auto;background:#FF7A1A;border-radius:22px;padding:clamp(36px,5.5vw,84px);display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,64px);color:#10130B">
+      <div style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:22px">
+        <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2rem,3.8vw,3.2rem);line-height:1;letter-spacing:-.03em;color:#10130B">
+          Enquanto você decide, seu concorrente provavelmente já gravou o vídeo desse mês.
+        </h2>
+        <a href="https://wa.link/46dk6q" target="_blank" rel="noopener" style="align-self:flex-start;background:#10130B;color:#F4F5EF;font-weight:600;font-size:clamp(15.5px,1.3vw,18px);padding:20px 30px;border-radius:12px;display:inline-flex;align-items:center;gap:10px;transition:transform .18s ease,background .18s ease" style-hover="background:#1F2416;transform:translateY(-2px);color:#F4F5EF">Falar no WhatsApp agora <span style="font-family:'Martian Mono',monospace;font-size:13px">→</span></a>
+        <p style="font-size:13.5px;line-height:1.6;color:rgba(16,19,11,.68)">Conversa sem compromisso. A proposta sai depois que a gente entende o seu negócio, não antes.</p>
+      </div>
+      <div style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:18px;font-size:clamp(15px,1.2vw,17px);line-height:1.62;color:rgba(16,19,11,.78);max-width:52ch">
+        <p>Todo negócio local que você admira no Instagram, o que sempre tem conteúdo novo, o que aparece primeiro quando alguém pesquisa o nicho, não chegou lá com sorte.</p>
+        <p>Chegou lá porque alguém dirigiu aquele conteúdo, toda semana, enquanto o concorrente ainda estava decidindo se valia a pena gravar.</p>
+        <p style="color:#10130B;font-weight:600">Você pode continuar tentando sozinho, entre um cliente e outro. Ou colocar a câmera, a direção e a edição na mão de quem já faz isso pra negócios como o seu.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="max-width:1240px;margin:0 auto;padding:clamp(64px,8vw,110px) 24px;display:flex;flex-wrap:wrap;gap:clamp(30px,5vw,72px)">
+    <div style="flex:1 1 260px;min-width:0;display:flex;flex-direction:column;gap:16px;align-self:flex-start">
+      <span style="display:inline-flex;align-items:center;gap:9px;font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#9A9E90">
+        <span style="width:6px;height:6px;border-radius:50%;background:#FF7A1A"></span>Dúvidas
+      </span>
+      <h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.8rem,3vw,2.5rem);line-height:1.05;letter-spacing:-.026em;max-width:16ch">
+        O que os donos perguntam antes de chamar
+      </h2>
+    </div>
+    <div style="flex:1 1 460px;min-width:0;display:flex;flex-direction:column">
+      <details style="border-top:1px solid rgba(255,255,255,.09)">
+        <summary style="display:flex;gap:20px;align-items:baseline;justify-content:space-between;cursor:pointer;list-style:none;padding:clamp(20px,2.2vw,28px) 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(16.5px,1.4vw,20px);letter-spacing:-.015em;color:#F4F5EF">
+          Nunca gravei nada, nem sei o que falar na câmera.
+          <span style="font-family:'Martian Mono',monospace;font-size:15px;color:#FF7A1A;flex:0 0 auto">+</span>
+        </summary>
+        <p style="font-size:15.5px;line-height:1.66;color:#B9BDAF;padding:0 0 clamp(22px,2.2vw,28px);max-width:62ch">A base parte do que você conhece do seu negócio. A gente transforma isso em roteiro: lapidando o que você já tem ou escrevendo do zero, conforme o plano. Na gravação, a direção te conduz cena por cena, você não precisa decorar nada.</p>
+      </details>
+      <details style="border-top:1px solid rgba(255,255,255,.09)">
+        <summary style="display:flex;gap:20px;align-items:baseline;justify-content:space-between;cursor:pointer;list-style:none;padding:clamp(20px,2.2vw,28px) 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(16.5px,1.4vw,20px);letter-spacing:-.015em;color:#F4F5EF">
+          Eu já tenho as ideias dos vídeos, só não sei gravar.
+          <span style="font-family:'Martian Mono',monospace;font-size:15px;color:#FF7A1A;flex:0 0 auto">+</span>
+        </summary>
+        <p style="font-size:15.5px;line-height:1.66;color:#B9BDAF;padding:0 0 clamp(22px,2.2vw,28px);max-width:62ch">Esse é o plano mais enxuto. Você traz a ideia ou o roteiro, a gente lapida pra funcionar melhor na câmera, dirige a gravação e edita. Se quiser que a ORAH assuma o roteiro do zero, com pesquisa, tem o plano mais completo.</p>
+      </details>
+      <details style="border-top:1px solid rgba(255,255,255,.09)">
+        <summary style="display:flex;gap:20px;align-items:baseline;justify-content:space-between;cursor:pointer;list-style:none;padding:clamp(20px,2.2vw,28px) 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(16.5px,1.4vw,20px);letter-spacing:-.015em;color:#F4F5EF">
+          Não tenho tempo pra ficar gravando o dia todo.
+          <span style="font-family:'Martian Mono',monospace;font-size:15px;color:#FF7A1A;flex:0 0 auto">+</span>
+        </summary>
+        <p style="font-size:15.5px;line-height:1.66;color:#B9BDAF;padding:0 0 clamp(22px,2.2vw,28px);max-width:62ch">A captação é feita num bloco de tempo só, marcado com antecedência. Não toma o seu dia inteiro nem para o atendimento.</p>
+      </details>
+      <details style="border-top:1px solid rgba(255,255,255,.09)">
+        <summary style="display:flex;gap:20px;align-items:baseline;justify-content:space-between;cursor:pointer;list-style:none;padding:clamp(20px,2.2vw,28px) 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(16.5px,1.4vw,20px);letter-spacing:-.015em;color:#F4F5EF">
+          Tenho vergonha de aparecer em vídeo.
+          <span style="font-family:'Martian Mono',monospace;font-size:15px;color:#FF7A1A;flex:0 0 auto">+</span>
+        </summary>
+        <p style="font-size:15.5px;line-height:1.66;color:#B9BDAF;padding:0 0 clamp(22px,2.2vw,28px);max-width:62ch">Dá pra gravar sem você aparecer, com foco no produto, no ambiente ou no processo. Muitos dos vídeos que a gente faz funcionam assim.</p>
+      </details>
+      <details style="border-top:1px solid rgba(255,255,255,.09)">
+        <summary style="display:flex;gap:20px;align-items:baseline;justify-content:space-between;cursor:pointer;list-style:none;padding:clamp(20px,2.2vw,28px) 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(16.5px,1.4vw,20px);letter-spacing:-.015em;color:#F4F5EF">
+          Já contratei um freelancer antes e o vídeo não deu resultado nenhum.
+          <span style="font-family:'Martian Mono',monospace;font-size:15px;color:#FF7A1A;flex:0 0 auto">+</span>
+        </summary>
+        <p style="font-size:15.5px;line-height:1.66;color:#B9BDAF;padding:0 0 clamp(22px,2.2vw,28px);max-width:62ch">Quase sempre a direção é o que faltou: o vídeo foi gravado sem enquadramento pensado, sem gancho, sem pensar em quem ia assistir. A câmera e o freelancer não eram o problema principal. É essa parte que a ORAH faz diferente.</p>
+      </details>
+      <details style="border-top:1px solid rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.09)">
+        <summary style="display:flex;gap:20px;align-items:baseline;justify-content:space-between;cursor:pointer;list-style:none;padding:clamp(20px,2.2vw,28px) 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(16.5px,1.4vw,20px);letter-spacing:-.015em;color:#F4F5EF">
+          Quanto custa?
+          <span style="font-family:'Martian Mono',monospace;font-size:15px;color:#FF7A1A;flex:0 0 auto">+</span>
+        </summary>
+        <p style="font-size:15.5px;line-height:1.66;color:#B9BDAF;padding:0 0 clamp(22px,2.2vw,28px);max-width:62ch">Depende do volume de conteúdo e do plano: a gente lapidando o seu roteiro sai mais enxuto, a ORAH escrevendo do zero agrega pesquisa e custa mais. O valor é fechado depois de entender o seu caso. Chama no WhatsApp e a gente te passa direto por lá.</p>
+      </details>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid rgba(255,255,255,.08);background:#0C0D09">
+    <div style="max-width:1240px;margin:0 auto;padding:clamp(44px,5vw,72px) 24px clamp(28px,3vw,40px);display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,56px)">
+      <div style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:baseline;gap:9px">
+          <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.4vw,42px);letter-spacing:-.03em;line-height:1">ORAH</span>
+          <span style="width:8px;height:8px;border-radius:50%;background:#FF7A1A;display:block;margin-bottom:6px"></span>
+          <span style="font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:.22em;color:#9A9E90;text-transform:uppercase">Digital</span>
+        </div>
+        <p style="font-size:14.5px;line-height:1.6;color:#9A9E90;max-width:34ch">Direção, captação e edição de Reels para negócio local. Tubarão, Santa Catarina.</p>
+      </div>
+      <div style="flex:1 1 180px;min-width:0;display:flex;flex-direction:column;gap:12px">
+        <span style="font-family:'Martian Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#5F6357">Página</span>
+        <a href="#problema" style="font-size:14.5px;color:#B9BDAF" style-hover="color:#F4F5EF">O problema</a>
+        <a href="#direcao" style="font-size:14.5px;color:#B9BDAF" style-hover="color:#F4F5EF">O método</a>
+        <a href="#reels" style="font-size:14.5px;color:#B9BDAF" style-hover="color:#F4F5EF">Reels no ar</a>
+        <a href="#faq" style="font-size:14.5px;color:#B9BDAF" style-hover="color:#F4F5EF">Dúvidas</a>
+      </div>
+      <div style="flex:1 1 240px;min-width:0;display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:'Martian Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#5F6357">Contato</span>
+        <a href="{{ igLink }}" target="_blank" rel="noopener" style="font-size:15px;color:#F4F5EF" style-hover="color:#FF7A1A">Instagram @orahdigital</a>
+        <a href="https://wa.link/46dk6q" target="_blank" rel="noopener" style="align-self:flex-start;border:1px solid rgba(255,122,26,.45);color:#FF7A1A;font-weight:600;font-size:14.5px;padding:13px 20px;border-radius:10px;transition:background .18s ease" style-hover="background:rgba(255,122,26,.12);color:#FF7A1A">Falar no WhatsApp →</a>
+      </div>
+    </div>
+    <div style="max-width:1240px;margin:0 auto;padding:18px 24px clamp(28px,3vw,40px);border-top:1px solid rgba(255,255,255,.06);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between">
+      <span style="font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:.14em;color:#5F6357">ORAH DIGITAL © 2026</span>
+      <span style="font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:.14em;color:#5F6357">TUBARÃO · SC</span>
+    </div>
+  </footer>
+
+  <div class="mobile-cta" style="position:fixed;left:0;right:0;bottom:0;z-index:60;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(10,11,8,.92);backdrop-filter:blur(14px);border-top:1px solid rgba(255,255,255,.09)">
+    <a href="https://wa.link/46dk6q" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:10px;background:#FF7A1A;color:#10130B;font-weight:600;font-size:16px;padding:16px;border-radius:12px;min-height:52px">Falar no WhatsApp agora <span style="font-family:'Martian Mono',monospace;font-size:13px">→</span></a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;whatsappNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://wa.link/46dk6q&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contato&quot;},&quot;formUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contato&quot;},&quot;instagramHandle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;orahdigital&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contato&quot;},&quot;showTestimonial&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Conteúdo&quot;}}">
+class Component extends DCLogic {
+  rail = React.createRef();
+  scrollRail(dir) {
+    const el = this.rail.current;
+    if (!el) return;
+    const card = el.firstElementChild;
+    const gap = 16;
+    const step = card ? (card.getBoundingClientRect().width + gap) * (window.innerWidth <= 620 ? 1 : 3) : el.clientWidth;
+    el.scrollBy({ left: dir * step, behavior: "smooth" });
+  }
+  renderVals() {
+    const wa = (this.props.whatsappNumber ?? "https://wa.link/46dk6q").trim();
+    let waLink = "#faq";
+    if (wa) {
+      if (/^https?:\/\//i.test(wa)) waLink = wa;
+      else if (/^(wa\.link|wa\.me)\//i.test(wa)) waLink = "https://" + wa;
+      else {
+        const digits = wa.replace(/\D/g, "");
+        if (digits) waLink = "https://wa.me/" + digits;
+      }
+    }
+    const handle = (this.props.instagramHandle ?? "orahdigital").replace(/^@/, "");
+    return {
+      railRef: this.rail,
+      railPrev: () => this.scrollRail(-1),
+      railNext: () => this.scrollRail(1),
+      waLink: waLink,
+      igLink: "https://instagram.com/" + handle,
+      formLink: (this.props.formUrl ?? "").trim() || "https://forms.gle/3WBAJwMoRtzavRni9",
+      showTestimonial: this.props.showTestimonial ?? false
+    };
+  }
+}
+</script>
+</body>
+</html>
