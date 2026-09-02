@@ -8,6 +8,22 @@
 <body>
 <x-dc>
 <helmet>
+<!-- Google Analytics 4 — troque G-XXXXXXXXXX pelo seu ID de medição (2 lugares) -->
+<script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('wa.link') > -1 || href.indexOf('wa.me') > -1) gtag('event', 'clique_whatsapp', { local: a.textContent.trim().slice(0, 40) });
+    else if (href.indexOf('forms.gle') > -1) gtag('event', 'clique_formulario');
+    else if (href.indexOf('instagram.com/reel') > -1) gtag('event', 'clique_reel', { reel: href });
+  }, true);
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&amp;family=Archivo:wght@400;500;600&amp;family=Martian+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
@@ -85,7 +101,7 @@
         </div>
         <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px">
           
-          <a href="{{ formLink }}" target="_blank" rel="noopener" style="border: 1px solid rgba(255,122,26,.45); color: #FF7A1A; font-weight: 600; font-size: 25px; padding: 17px 26px; border-radius: 11px; transition: background .18s ease,transform .18s ease; width: 417px; height: 76px; text-align: center" style-hover="background:rgba(255,122,26,.12);transform:translateY(-2px);color:#FF7A1A">Preencha o formulário</a>
+          <a href="{{ formLink }}" style="border: 1px solid rgba(255,122,26,.45); color: #FF7A1A; font-weight: 600; font-size: 25px; padding: 17px 26px; border-radius: 11px; transition: background .18s ease,transform .18s ease; width: 417px; height: 76px; text-align: center" style-hover="background:rgba(255,122,26,.12);transform:translateY(-2px);color:#FF7A1A">Preencha o formulário</a>
           <a href="#reels" style="color:#B9BDAF;font-size:15px;padding:18px 4px;border-bottom:1px solid rgba(255,255,255,.18);transition:color .18s ease,border-color .18s ease" style-hover="color:#F4F5EF;border-color:#FF7A1A">Ver os Reels que já fizemos</a>
         </div>
       </div>
@@ -448,7 +464,7 @@ class Component extends DCLogic {
       railNext: () => this.scrollRail(1),
       waLink: waLink,
       igLink: "https://instagram.com/" + handle,
-      formLink: (this.props.formUrl ?? "").trim() || "https://forms.gle/3WBAJwMoRtzavRni9",
+      formLink: (this.props.formUrl ?? "").trim() || "ORAH Formulario.dc.html",
       showTestimonial: this.props.showTestimonial ?? false
     };
   }

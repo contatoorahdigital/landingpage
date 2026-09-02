@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Formulário — ORAH Digital</title>
+<!-- Google Analytics 4 — troque G-XXXXXXXXXX pelo seu ID de medição (2 lugares) -->
+<script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+  gtag('event', 'formulario_aberto');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Archivo:wght@400;500;600&family=Martian+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; background: #0A0B08; color: #F4F5EF; font-family: Archivo, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #FF7A1A; text-decoration: none; transition: filter .18s ease, background .18s ease, transform .18s ease; }
+  a:hover { filter: brightness(1.12); }
+  p { margin: 0; text-wrap: pretty; }
+  h1, h2 { text-wrap: balance; }
+  .form-frame { width: 100%; height: 1400px; border: 0; display: block; background: #F4F5EF; }
+  @media (max-width: 900px) { .form-frame { height: 1750px; } }
+</style>
+</helmet>
+
+<div style="background:#0A0B08;min-height:100vh;overflow-x:hidden">
+  <header style="border-bottom:1px solid rgba(255,255,255,.07)">
+    <div style="max-width:1240px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;gap:20px">
+      <a href="ORAH Landing.dc.html" style="display:flex;align-items:baseline;gap:8px;color:#F4F5EF">
+        <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:23px;letter-spacing:-.02em;line-height:1">ORAH</span>
+        <span style="width:6px;height:6px;border-radius:50%;background:#FF7A1A;display:block;margin-bottom:4px"></span>
+        <span style="font-family:'Martian Mono',monospace;font-size:9.5px;letter-spacing:.22em;color:#9A9E90;text-transform:uppercase">Digital</span>
+      </a>
+      <a href="ORAH Landing.dc.html" style="margin-left:auto;font-size:13.5px;color:#9A9E90">&larr; Voltar para o site</a>
+    </div>
+  </header>
+
+  <section style="max-width:1240px;margin:0 auto;padding:clamp(36px,5vw,72px) 24px clamp(24px,3vw,40px);display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,56px);align-items:flex-start">
+    <div style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:20px">
+      <span style="display:inline-flex;align-items:center;gap:9px;font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#9A9E90">
+        <span style="width:6px;height:6px;border-radius:50%;background:#FF7A1A"></span>Diagnóstico do seu conteúdo
+      </span>
+      <h1 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2rem,3.8vw,3.1rem);line-height:1;letter-spacing:-.028em">
+        Conta pra gente sobre o <span style="color:#FF7A1A">seu negócio.</span>
+      </h1>
+      <p style="font-size:clamp(15.5px,1.2vw,17.5px);line-height:1.65;color:#B9BDAF;max-width:52ch">
+        Preenche aqui que a gente te chama no WhatsApp pra entender teu momento e te mostrar como funciona. Leva menos de 2 minutos.
+      </p>
+      <div style="display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;max-width:460px">
+        <div style="background:#12140F;padding:18px 22px;display:flex;gap:16px;align-items:flex-start">
+          <span style="font-family:'Martian Mono',monospace;font-size:11px;color:#FF7A1A;padding-top:2px">01</span>
+          <p style="font-size:14.5px;line-height:1.6;color:#DDE2CE">São 10 perguntas rápidas, nenhuma delas sobre orçamento.</p>
+        </div>
+        <div style="background:#12140F;padding:18px 22px;display:flex;gap:16px;align-items:flex-start">
+          <span style="font-family:'Martian Mono',monospace;font-size:11px;color:#FF7A1A;padding-top:2px">02</span>
+          <p style="font-size:14.5px;line-height:1.6;color:#DDE2CE">A gente responde no WhatsApp com os Reels de negócios parecidos com o seu.</p>
+        </div>
+        <div style="background:#12140F;padding:18px 22px;display:flex;gap:16px;align-items:flex-start">
+          <span style="font-family:'Martian Mono',monospace;font-size:11px;color:#FF7A1A;padding-top:2px">03</span>
+          <p style="font-size:14.5px;line-height:1.6;color:#DDE2CE">Sem compromisso de fechar nada.</p>
+        </div>
+      </div>
+      <p style="font-size:14px;line-height:1.6;color:#9A9E90;max-width:44ch">
+        Prefere resolver direto? <a href="https://wa.link/46dk6q" target="_blank" rel="noopener" style="border-bottom:1px solid rgba(255,122,26,.5)">Chama no WhatsApp</a>.
+      </p>
+    </div>
+    <div style="flex:1 1 520px;min-width:0;border:1px solid rgba(255,255,255,.08);border-radius:18px;overflow:hidden;background:#12140F">
+      <iframe class="form-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSc4GBuVCmETvCroqoyfEjTZuh-Rjc-RM1uRqJK6lCkiu3lm7w/viewform?embedded=true" title="Formulário ORAH Digital" loading="lazy">Carregando…</iframe>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid rgba(255,255,255,.08);background:#0C0D09;margin-top:clamp(30px,4vw,56px)">
+    <div style="max-width:1240px;margin:0 auto;padding:28px 24px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center">
+      <span style="font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:.14em;color:#5F6357">ORAH DIGITAL © 2026 · TUBARÃO · SC</span>
+      <a href="https://instagram.com/orahdigital" target="_blank" rel="noopener" style="font-size:14px;color:#B9BDAF">Instagram @orahdigital</a>
+    </div>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>
